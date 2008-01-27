@@ -1,0 +1,9 @@
+Build.PL
+Changes
+lib/Geo/Proj/Japan.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+t/00.load.t
+t/01.transform.t
+META.yml
