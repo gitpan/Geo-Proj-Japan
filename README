@@ -1,4 +1,4 @@
-Geo-Proj-Japan version 0.0.1
+Geo-Proj-Japan version 0.0.2
 
 Add famous Japanese datums to Geo::Proj
 
@@ -11,7 +11,6 @@ To install this module, run the following commands:
     ./Build
     ./Build test
     ./Build install
-
 
 
 DEPENDENCIES

@@ -1,49 +1,29 @@
-package Geo::Proj::Japan;
-
-use warnings;
-use strict;
-use Carp;
-
-use version; our $VERSION = qv('0.0.2');
-
-use Geo::Proj;
-
-sub import {
-    my $tproj = '+proj=latlong +ellps=bessel +towgs84=-146.336,506.832,680.254';
-    Geo::Proj->new(
-        nick  => 'tokyo', 
-        proj4 => $tproj,
-    );
-    Geo::Proj->new(
-        nick  => 'tokyo97', 
-        proj4 => $tproj,
-    );
-    Geo::Proj->new( 
-        nick  => 'jgd2000', 
-        proj4 => '+proj=latlong +ellps=GRS80',
-        srid  => 4612,
-    );
-}
-
-1; # Magic true value required at end of module
-__END__
-
 =head1 NAME
 
-Geo::Proj::Japan - Add famous Japanese datums to Geo::Proj
+Geo::Proj::Japan - Geo::Projモジュールに日本の主な測地系定義を加えます
 
 
 =head1 VERSION
 
-This document describes Geo::Proj::Japan version 0.0.2
+この文書は Geo::Proj::Japan バージョン 0.0.2について記述しています。
 
 
 =head1 SYNOPSIS
 
   use Geo::Proj::Japan;
   
-  # After this, You can use tokyo97, tokyo(alias of tokyo97), jgd2000
+  # 上記により、tokyo97、tokyo、jgd2000をGeo::Projで使えるようになります。
   my $point_tokyo = Geo::Point->latlong($lat, $lng, 'tokyo');
+
+
+=head1 DESCRIPTION
+
+このモジュールを導入する事により、Geo::Projで旧日本測地系（tokyo97）、
+tokyo（tokyo97のエイリアス）、新日本測地系（jgd2000）をGeo::Projで
+使えるようになります。
+
+このモジュールは定義のみを提供し、関数・メソッド等は提供しません。
+
 
 =head1 DEPENDENCIES
 
